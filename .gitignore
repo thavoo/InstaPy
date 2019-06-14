@@ -98,12 +98,13 @@ ENV/
 .DS_Store
 
 # Storage
-instapy.db
+*.db
 logs/
 
 # Editors
 .idea
 .vscode
+.bak
 
 # pytest
 .pytest_cache/

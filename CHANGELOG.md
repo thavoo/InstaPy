@@ -4,12 +4,150 @@ The **goal** of this file is explaining to the users of our project the notable 
 _The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)_.
 
 
-## [0.1.3] - UNKNOWN
+## [0.5.0] - ADD DATE HERE
+### Added
+- Additional check for like block.
+
+### Changed
+- Remove support for python2
+- Information regarding the nogui parameter in documentation.
+- XPath Isolation
+- Remove redundant assignment of pod_post_ids
+- Remove address var assigned multiple times without intermediate usage
+- `set_mandatory_language` can maintain multiple character sets
+- Feature finetuning comments for pods
+
+### Fixed
+- Interact_by_comments aborts when self.abort is true
+- Media type filter (Photo, Video) in get_links
+- 'Failed to get comments' issue 
+- Threaded session ending with exception `ValueError: signal only works in main thread`
+- `like_image` in dev has this arg
+- Verifying mandatory words when the script can not get post description
+- Codacy checks for unused var, out of scope, and missing args
+
+
+## [0.4.3] - 2019-05-15
+### Fixed
+- Commenting issue #4409
+
+
+## [0.4.2] - 2019-04-15
+### Fixed
+- Fail of whole pod run on exception
+
+
+## [0.4.1] - 2019-04-06
+### Added
+- Support for split database with -sdb flag to avoid SQLite lock up
+
+### Fixed
+- "Failed to find login button" when trying to login (add KEYS.ENTER to submit login data)
+
+
+## [0.4.0] - 2019-04-03
+### Added
+- Improved info provided by log messages in instapy.py and like_util.py
+- Possibility to skip non bussiness accounts
+
+### Changed
+- Remove docker from core, moved into instapy-docker repo
+- Remove quickstart templates and only reference instapy-quickstart
+- Restructure README and add new DOCUMENTATION file
+
+### Fixed
+- "UnboundLocalError: local variable 'tag' referenced before assignment" when there is no smart-hastag genereated
+- xPath to dialog_address
+
+
+## [0.3.4] - 2019-03-17
+### Added
+- (re) add page_reload, after cookie load, on login_user()
+
+### Fixed
+- "Failed to load desired amount of users" when trying to read long follower lists
+
+
+## [0.3.3] - 2019-03-14
+### Added
+- Add additional exception catch to Login check
+
+### Changed
+- Set language on the browser (no clicks required)
+
+### Fixed
+- Get_active_users hotfix
+
+
+## [0.3.2] - 2019-03-12
+### Fixed
+- Hot fix problems with browser abstraction class
+
+
+## [0.3.1] - 2019-03-12
+### Fixed
+- Removed retry decorator 
+
+
+## [0.3.0] - 2019-03-11
+### Added
+- Allowing `follow_by_tags` to interact with the user
+- Context manager to interaction calls in `like_by_tags` and `follow_likers`
+- Engagement pods feature 🙌 
+- Smart Hashtags based on locations `set_smart_location_hashtags`
+- Verify action for unfollow and follow actions
+- Browser abstraction and Decorator that handles Selenium Browser exceptions by reloading
+- Add delay unfollow of follow backers
+
+### Changed
+- Expose `threaded_session` of Instapy.end()
+
+### Fixed
+- `follow_likers` always fetches zero likers
+- Prevent division by zero in `validate_username`
+
+
+## [0.2.3] - 2019-03-01
+### Changed
+- Made Log in text checking more resilient 
+
+
+## [0.2.2] - 2019-02-21
+### Fixed
+- Chromedriver requirement now >= 2.44 instead of == 2.44
+
+
+## [0.2.1] - 2019-02-21
+### Fixed
+- xPath for Log In button
+
+
+## [0.2.0] - 2019-02-18
+### Added
+- Accept pending follow requests for private account
+- Feature to `follow_by_locations`
+- Proxy Authentication support for Firefox
+
+### Fixed
+- Only import instapy-chromedriver package when needed
+- Avoid user errors providing user names with caps
+- Fix get_active_users wrong behavior on videos
+- Bug in _CLI_ **argparsing** - `proxy_port` & `page_delay` are integers and not strings.
+- Selectors for finding comments and liking comments on posts
+- Temporarily turn off follow for `like_by_tags` interaction
+
+### Changed
+- Enable users interact by the comments of their own profiles.
+- Moved elements from docs folder to instapy-docs and instapy-research repositories
+
+
+## [0.1.3] - 2019-02-05
 ### Fixed
 - Fix "_Failed to load desired amount of users!_" issue.
 
 ### Added
 - Add _Progress Tracker_ to `get_users_through_dialog()` function.
+- Add Proxy Authentication for Firefox
 
 
 ## [0.1.2] - 2019-02-04

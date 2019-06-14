@@ -10,6 +10,8 @@ from os import environ as environmental_variables
 from os.path import join as join_path
 from os.path import exists as path_exists
 
+from .xpath import read_xpath
+
 
 WORKSPACE = {"name": "InstaPy",
              "path": environmental_variables.get("INSTAPY_WORKSPACE")}
@@ -75,6 +77,8 @@ class Settings:
     # state of instantiation of InstaPy
     InstaPy_is_running = False
 
+    # This is where currently the pods server is hosted
+    pods_server_endpoint = 'https://us-central1-instapy-pods.cloudfunctions.net'
 
 class Storage:
     """ Globally accessible standalone storage """
@@ -89,6 +93,6 @@ class Selectors:
     """
 
     likes_dialog_body_xpath = (
-        "//h1[text()='Likes']/../../following-sibling::div/div")
+        read_xpath("class_selectors","likes_dialog_body_xpath"))
 
-    likes_dialog_close_xpath = "//span[contains(@aria-label, 'Close')]"
+    likes_dialog_close_xpath = read_xpath("class_selectors","likes_dialog_close_xpath")
